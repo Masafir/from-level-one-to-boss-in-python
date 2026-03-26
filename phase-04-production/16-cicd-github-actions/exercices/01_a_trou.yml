@@ -1,0 +1,40 @@
+# Module 16 — Exercice à trou #1
+# 🎯 Thème : Workflow GitHub Actions "Lint & Test"
+#
+# Complète les ___ pour avoir une CI robuste qui vérifie le code à chaque PR.
+
+name: Validation de la PR
+
+on:
+  ___: # Quel mot clé pour déclencher à chaque "Push" ?
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test_and_lint:
+    runs-on: ___ # Quel OS utiliser pour que ça tourne sur GitHub ? (Hint: ubuntu-latest)
+
+    steps:
+    - name: Récupérer le code
+      uses: actions/___@v4 # Action officielle pour faire un `git checkout`
+
+    - name: Installer Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: "___" # Quelle version on installe ?
+
+    - name: Installer les dépendances
+      run: |
+        python -m pip install --upgrade pip
+        pip install ruff mypy pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Lancer le Linter (Ruff)
+      run: ___ check . # Quelle commande pour Linter avec le nouvel outil rapide ?
+
+    - name: Lancer le Type Checker (Mypy)
+      run: ___ src/ --strict # Quel outil vérifie les type hints ?
+
+    - name: Lancer les Tests (Pytest)
+      run: ___ -v # Quel outil lance les tests unitaires ?

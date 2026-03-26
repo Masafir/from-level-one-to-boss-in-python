@@ -1,0 +1,26 @@
+# Module 17 — Exercice à trou #2
+# 🎯 Thème : Caddy Server (Le reverse proxy magique)
+#
+# Sur un VPS, on ne veut pas écrire 200 lignes de config Nginx pour avoir et renouveler le HTTPS.
+# "Caddy" est l'outil moderne par excellence. En 4 lignes il génère un certificat Let's Encrypt 
+# et redirige ton trafic vers ton conteneur Docker !
+#
+# Complète ce Caddyfile basique (Le fichier de config de Caddy).
+
+# ==========================================
+# Caddyfile
+# ==========================================
+
+# 1. Déclarer ton nom de domaine (Exemple: api.mon-jeu.com)
+___ { # Ton domaine ici
+    
+    # 2. On veut créer un Reverse Proxy
+    ___ / ___:8000 # Quelle directive Caddy fait ça ? Vers quelle IP locale et quel port ? (hint: reverse_proxy / localhost:8000)
+
+}
+
+# C'est TOUT ! 
+# Avec ça, Caddy :
+# - Écoute sur le port 80 et redirige vers 443 (HTTPS)
+# - Demande et renouvelle automatiquement les certificats SSL
+# - Transfère le trafic au port 8000 (ton conteneur Docker Gunicorn)

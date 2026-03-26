@@ -1,0 +1,23 @@
+# Module 16 — Exercice complet #3
+# 🎯 Thème : Workflow de Déploiement Continu (CD)
+#
+# Ton objectif : Écrire un fichier `.github/workflows/deploy.yml` 
+# complétement prêt pour la production (Docker Hub).
+
+# ==========================================
+# BESOINS:
+# ==========================================
+# 1. Ce workflow ne doit se déclencher QUE lorsqu'on pousse un "tag" Git (ex: v1.0, v2.4).
+# 2. Il doit avoir un job "build_docker" sur Ubuntu.
+# 3. Ce job doit :
+#    - Faire un checkout du code.
+#    - Se connecter au Docker Hub (utilise l'action docker/login-action@v3).
+#    - Construire et pousser l'image avec docker/build-push-action@v5.
+#
+# Utilise les noms de secrets standards : 
+# - DOCKER_USERNAME
+# - DOCKER_PASSWORD
+# 
+# Le nom de l'image (le tag Docker) doit être : $DOCKER_USERNAME/my-game-api:latest
+
+# TODO: Écris tout le code YAML ci-dessous. Ne laisse rien de vide.

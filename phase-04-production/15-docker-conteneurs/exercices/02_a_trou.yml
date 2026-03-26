@@ -1,0 +1,49 @@
+# Module 15 — Exercice à trou #2
+# 🎯 Thème : Docker Compose pour une API FastAPI + PostgreSQL
+#
+# Complète les ___ pour relier l'API à sa base de données.
+
+version: '3.8'
+
+services:
+  # L'API FastAPI
+  api:
+    ___: .  # Quel mot-clé pour indiquer qu'il faut utiliser le Dockerfile du dossier courant ?
+    ports:
+      - "8000:8000"
+    environment:
+      # L'URL pings service "db" via le réseau interne Docker
+      - DATABASE_URL=postgresql+psycopg2://admin:supersecret@___:5432/game_db  # Quel est l'hôte de la BDD ?
+    depends_on:
+      db:
+        ___: service_healthy # Quelle condition attendre avant de lancer l'API ?
+    networks:
+      - game-network
+
+  # La Base de Données
+  ___:  # Quel nom donner au service pour que `depends_on` ci-dessus fonctionne ?
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=___ # Doit matcher l'URL au-dessus
+      - POSTGRES_PASSWORD=supersecret
+      - POSTGRES_DB=game_db
+    ports:
+      - "5432:5432"
+    volumes:
+      # Persistance de la DB sur la machine locale !
+      - postgres_data:___ # Quel est le dossier interne de postgres ? (/var/lib/postgresql/data)
+    healthcheck: # Ce bloc permet à "service_healthy" de fonctionner
+      test: ["CMD-SHELL", "pg_isready -U admin -d game_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - game-network
+
+# Déclaration du volume nommé
+___: # Quel mot-clé global ?
+  postgres_data:
+
+# Déclaration du réseau
+networks:
+  game-network:

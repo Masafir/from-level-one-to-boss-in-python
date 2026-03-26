@@ -1,0 +1,5 @@
+# Module 17 — Solution exercice à trou #2
+
+api.mon-jeu.com { 
+    reverse_proxy / localhost:8000
+}

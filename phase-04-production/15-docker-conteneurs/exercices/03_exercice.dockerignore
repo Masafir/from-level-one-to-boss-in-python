@@ -1,0 +1,16 @@
+# Module 15 — Exercice complet #3
+# 🎯 Thème : Le .dockerignore
+#
+# Crée le fichier `.dockerignore` parfait pour un projet Python
+# Il doit impérativement interdire le dossier d'environnement virtuel
+# ainsi que les fichiers caches compilés.
+
+.git
+.venv
+venv/
+__pycache__/
+*.pyc
+
+# TODO: Rajoute au moins 4 autres exclusions essentielles 
+# pour un projet professionnel (tests, dev, caches, secrets...)
+# ...

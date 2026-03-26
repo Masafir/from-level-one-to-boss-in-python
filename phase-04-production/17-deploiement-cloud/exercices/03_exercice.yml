@@ -1,0 +1,22 @@
+# Module 17 — Exercice complet #3
+# 🎯 Thème : Docker-Compose pour Le Reverse Proxy
+#
+# Tu veux déployer sur un VPS (Virtual Private Server) nu avec Docker Compose.
+# Tu as ton API (gunicorn) et tu veux ajouter Nginx ou Caddy Devant.
+# Objectif : Écris le fichier docker-compose.yml 
+
+# ==========================================
+# BESOINS:
+# ==========================================
+# 1. Un service "web" (l'API Python construite avec ton Dockerfile)
+#    - Ne DOIT PAS exposer son port (8000) à la machine hôte ! (Pas de directive `ports:`)
+#    - Doit être dans un réseau interne "backend"
+#
+# 2. Un service "reverse-proxy" (Image caddy:2-alpine ou nginx:alpine)
+#    - Doit exposer les ports 80 (HTTP) et 443 (HTTPS) à l'hôte ! (`ports: - "80:80" ...`)
+#    - Doit appartenir au réseau "backend" pour parler à l'API.
+#    - Doit monter un volume pour ta config (ex: `./Caddyfile:/etc/caddy/Caddyfile`)
+#
+# 3. La déclaration du réseau `backend`.
+
+# TODO: Écris tout le code YAML ci-dessous.
