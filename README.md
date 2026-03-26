@@ -36,10 +36,37 @@ Maîtriser Python au niveau professionnel pour postuler à des postes **Fullstac
 | 04 | [POO Pythonique](phase-01-fondations/04-poo-pythonique/) | Classes, dunder, ABC, dataclasses |
 | 05 | [Erreurs & Typing](phase-01-fondations/05-gestion-erreurs-typing/) | Exceptions, context managers, type hints |
 
-### Phase 2 — API & Backend *(Mois 2)* 🔜
-### Phase 3 — Data Engineering *(Mois 3)* 🔜
-### Phase 4 — Production *(Mois 4)* 🔜
-### Phase 5 — Boss Projects *(Mois 5-6)* 🔜
+### Phase 2 — API & Backend *(Mois 2)*
+| # | Module | Thème |
+|---|--------|-------|
+| 06 | [Modules & Packages](phase-02-api-et-backend/06-modules-et-packages/) | Imports, `__init__`, distribution |
+| 07 | [FastAPI & Django](phase-02-api-et-backend/07-fastapi-django/) | API REST, Routing, Pydantic |
+| 08 | [Bases de données (SQLAlchemy)](phase-02-api-et-backend/08-bases-de-donnees/) | ORM, Sessions, Migrations |
+| 09 | [Auth & Patterns avancés](phase-02-api-et-backend/09-auth-et-patterns/) | JWT, RBAC, Dépendances |
+| 10 | [Testing (Pytest)](phase-02-api-et-backend/10-testing-pytest/) | Fixtures, Mocks, TDD |
+
+### Phase 3 — Data Engineering *(Mois 3)*
+| # | Module | Thème |
+|---|--------|-------|
+| 11 | [Async avancé](phase-03-data-engineering/11-async-avance/) | Coroutines, Event Loop, Pub/Sub |
+| 12 | [ETL et Data Pipelines](phase-03-data-engineering/12-etl-pipelines/) | Extraction, Transformation, Chargement |
+| 13 | [Pandas & Analyse de Données](phase-03-data-engineering/13-pandas-analyse/) | DataFrames, Nettoyage, Agrégation |
+| 14 | [Streaming et Event Processing](phase-03-data-engineering/14-streaming-events/) | Temps-réel, WebSockets, Redis |
+
+### Phase 4 — Production *(Mois 4)*
+| # | Module | Thème |
+|---|--------|-------|
+| 15 | [Docker & Conteneurisation](phase-04-production/15-docker-conteneurs/) | Images, Containers, Compose |
+| 16 | [CI/CD (GitHub Actions)](phase-04-production/16-cicd-github-actions/) | Workflows, Tests auto, Linting |
+| 17 | [Déploiement](phase-04-production/17-deploiement-cloud/) | WSGI/ASGI, Reverse Proxy, Cloud |
+| 18 | [Monitoring & Observabilité](phase-04-production/18-monitoring/) | Logging, Profiling, Alerting |
+
+### Phase 5 — Boss Projects *(Mois 5-6)*
+| # | Projet | Thème |
+|---|--------|-------|
+| 01 | [The Master API](phase-05-boss-projects/project-01-master-api/) | CRUD, Auth JWT, Docker |
+| 02 | [The Data Pipeline](phase-05-boss-projects/project-02-data-pipeline/) | Générateurs, Reporting, Automatisation |
+| 03 | [The Real-Time Arena](phase-05-boss-projects/project-03-real-time-arena/) | WebSockets, Asyncio, State Management |
 
 ## 📐 Format de chaque module
 
